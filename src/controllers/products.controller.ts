@@ -15,6 +15,13 @@ async function insertProduct(req: Request, res: Response) {
   res.status(201).json(product);
 }
 
+async function getAllProducts(req: Request, res: Response) {
+  const allProducts = await productService.getAllProducts();
+  
+  return res.status(200).json(allProducts);
+}
+
 export default {
   insertProduct,
+  getAllProducts,
 };

@@ -5,6 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/products', userController.insertProduct);
+app.post('/products', userController.insertProduct);
+app.get('/products', userController.getAllProducts);
 
 export default app;
