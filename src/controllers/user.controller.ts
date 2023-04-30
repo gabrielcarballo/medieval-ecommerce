@@ -11,7 +11,6 @@ async function signInUser(req: Request, res: Response) {
   if (type) return res.status(errorMap(type)).json({ message });
 
   const accountAlreadyRegistered = await userService.isUserRegistered(userInfo.username);
-  console.log(accountAlreadyRegistered);
   if (!accountAlreadyRegistered) {
     await userService.createUser(userInfo);
 
